@@ -11,9 +11,6 @@ class Game {
         console.log('setup game'); 
     }
 
-    drawGame(){
-        console.log('draw game');
-    }
 
 
 
