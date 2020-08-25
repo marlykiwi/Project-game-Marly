@@ -1,17 +1,26 @@
 const game = new Game();
-var dots = [];
+
+function preload (){
+    game.preloadGame();
+    
+}
 
 function setup () {
-    let canvas = createCanvas(WIDTH, HEIGHT);
-    canvas.parent("canvas");
-    for (let y= dSize/2; y<HEIGHT; y+=dSize*2){
-        dots.push(createVector(WIDTH/2-dSize/2));
-    }
+    createCanvas(WIDTH, HEIGHT);
+    game.setupGame();
 
 }
 
 function draw () {
-    background(0);
-    noStroke();
-    fill(255);
+    
+    game.drawGame();
+    
 }
+
+function keyPressed() {
+    if (keyCode === 32) {
+        game.ball.throw();
+    }
+}
+
+

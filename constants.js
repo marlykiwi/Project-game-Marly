@@ -1,3 +1,2 @@
 WIDTH = 800;
-HEIGHT= 500;
-
+HEIGHT = 500;
