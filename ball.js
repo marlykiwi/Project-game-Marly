@@ -10,11 +10,13 @@ class Ball {
         this.sense=1;
         this.gravity=0.4;
         this.imageHoop;
+        
     }
     
 
     preloadBall(){
     this.image= loadImage("./assets/basketball 490.png");
+    
     
     }
 

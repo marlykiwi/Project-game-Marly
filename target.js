@@ -4,7 +4,7 @@ class Target {
     this.x = WIDTH/3;
     this.y = HEIGHT/4;
     this.w = WIDTH*0.1;
-    this.h = HEIGHT*0.1;
+    this.h = this.w*(489/510);
     this.image;
     this.imageHoop;
     this.visibility= false;
