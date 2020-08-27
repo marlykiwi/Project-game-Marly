@@ -1,37 +1,39 @@
 class Game {
     constructor(){
+    this.background = new Background();
     this.target = new Target();
     this.ball = new Ball();
     this.ramp = new Ramp();
-    this.velocity = 0.8;
+    this.velocity = 0.7;
     this.gravity = -0.4;
+    this.backgroundImgs;
         
     }
     
     preloadGame(){
         
-        // this.backgroundImgs = [
-        //     {
-        //         src: loadImage("./assets/background 1 900.png"),
-        //         x: 0,
-        //         speed: 0,
-        //     },
-        //     {
-        //         src: loadImage("./assets/background 2 900.png"),
-        //         x: 0,
-        //         speed: 1,
-        //     },
-        //     {
-        //         src: loadImage("./assets/background 3 900.png"),
-        //         x: 0,
-        //         speed: 2,
-        //     },
-        //     {
-        //         src: loadImage("./assets/background 4 900.png"),
-        //         x: 0,
-        //         speed: 3,
-        //     },
-        // ];
+        this.backgroundImages = [
+            {
+                src: loadImage("./assets/background 1 900.png"),
+                x: 0,
+                speed: 0,
+            },
+            {
+                src: loadImage("./assets/background 2 900.png"),
+                x: 0,
+                speed: 1,
+            },
+            {
+                src: loadImage("./assets/background 3 900.png"),
+                x: 0,
+                speed: -1,
+            },
+            {
+                src: loadImage("./assets/background 4 900.png"),
+                x: 0,
+                speed: 1,
+            },
+        ];
         this.image = loadImage("./assets/static background.png")
         this.imageFloor = loadImage("./assets/flooring.png");
         this.imageFloorUp = loadImage("./assets/flooring.png");
@@ -45,9 +47,8 @@ class Game {
     }
         
     setupGame(){
-        // this.image = loadImage("./assets/lousy-background-cut.png");
         // this.background = new Background();
-        // this.background.images = this.backgroundImgs;
+        this.background.images = this.backgroundImages;
         textSize(21);
         this.target.setupTarget();
         this.ball.setupBall();
@@ -57,21 +58,21 @@ class Game {
 
 
     drawGame (){
-        // this.background.drawBackground();
-
+        
         if (screen == 0){
             clear();
             image(this.image, 0,0);
             fill(255);
             textAlign(CENTER);
             text('Press ENTER to start', WIDTH/2, HEIGHT/2);
-
+            
         }
-
+        
         if (screen === 1){
-
-        clear();
-        image(this.image, 0,0);
+            
+            clear();
+        this.background.drawBackground();
+        // image(this.image, 0,0);
         image(this.imageFloor, 0, HEIGHT-WIDTH*(26/750), WIDTH*0.8, WIDTH*(26/750));
         image(this.imageFloorUp, 0, HEIGHT*0.25, WIDTH*0.8, WIDTH*(26/750));
         noStroke();
