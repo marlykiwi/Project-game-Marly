@@ -16,6 +16,9 @@ class Background {
         if (picture.x < 0) {
           picture.x = WIDTH;
         }
+        if (picture.x>WIDTH){
+            picture.x=0;
+        }
       });
     }
   }

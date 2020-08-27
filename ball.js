@@ -51,7 +51,7 @@ class Ball {
         if (this.y >= height-this.height){
             this.y = height - this.height;
             this.velocityY = 0;
-            this.velocityX = 10*(1+0.8*(score));
+            this.velocityX = 10*(1+0.3*(score));
             game.target.visibility = false;
             game.ramp.visibility = false;
         }

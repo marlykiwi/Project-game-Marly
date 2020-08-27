@@ -34,7 +34,8 @@ class Game {
                 speed: 1,
             },
         ];
-        this.image = loadImage("./assets/static background.png")
+        this.image = loadImage("./assets/Save simba.png")
+        this.imageCircle = loadImage("./assets/circle of life.png")
         this.imageFloor = loadImage("./assets/flooring.png");
         this.imageFloorUp = loadImage("./assets/flooring.png");
         this.ball.image = loadImage("./assets/basketball 490.png");
@@ -64,7 +65,8 @@ class Game {
             image(this.image, 0,0);
             fill(255);
             textAlign(CENTER);
-            text('Press ENTER to start', WIDTH/2, HEIGHT/2);
+            text('Press ENTER to start', WIDTH/2, HEIGHT*0.7);
+            text('Use the SPACE BAR to shoot basketballs and help Simba escape from the lava!', WIDTH/2, HEIGHT*0.9);
             
         }
         
@@ -95,6 +97,7 @@ class Game {
             this.ramp.yPerson += 1-this.gravity;
             this.ramp.y += this.gravity;
             game.ball.velocityX=0;
+            screen=2;
             }
 
             if (this.ramp.yPerson>430){
@@ -104,13 +107,22 @@ class Game {
             if  (this.ramp.y<=HEIGHT*0.25-this.ramp.h){
             this.velocity=0;
             this.gravity=0;
-            this.ramp.xPerson-=30;
+                if (this.ramp.xPerson>0){
+                this.ramp.xPerson-=3;
+                this.ramp.yPerson = HEIGHT*0.25-this.ramp.hP;
+                textAlign(CENTER);
+                text('You saved Simba!', WIDTH/2, HEIGHT/2);
+                    if (this.ramp.xPerson<5){
+                        screen=0;
+                    }
+
+                }
             this.ball.velocityX=0;
             image(this.ramp.imagePerson, this.ramp.xPerson, this.ramp.yPerson, this.ramp.wP, this.ramp.hP);
             }
 
         
-            if (this.ball.x > this.target.x && this.ball.x <=(this.target.x+35)){
+            if (this.ball.x > this.target.x && this.ball.x <=(this.target.x+this.target.w-40)){
             if (this.ball.y < (this.target.y-this.ball.height)) {
                 this.target.visibility = true;
                 this.ball.x = this.target.x + (this.target.w/2 - this.ball.width/2);
@@ -143,16 +155,17 @@ class Game {
             
             }
         
-            if (screen == 2){
-                clear();
-                image(this.image, 0,0);
-                text('GAME OVER', 20, 40);
-                text('Press ENTER to try again', 20, 40);
+            
+        }
+        
+        if (screen == 2){
+            clear();
+            image(this.imageCircle, 0,0);
+            textAlign(CENTER);
+            text('GAME OVER', WIDTH/2, HEIGHT/2);
+            text('Press ENTER to try again', WIDTH/2, HEIGHT*0.7);
 
-            }
-
-    }
-
+        }
 
     }
     }
