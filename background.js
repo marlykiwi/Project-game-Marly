@@ -2,6 +2,7 @@
 //     constructor() {
 //       this.x = 0;
 //       this.images;
+
 //     }
   
 //     drawBackground() {

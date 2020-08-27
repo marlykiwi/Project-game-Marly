@@ -1,3 +1,4 @@
+let screen = 0;
 const game = new Game();
 
 function preload (){
@@ -12,7 +13,7 @@ function setup () {
 }
 
 function draw () {
-    
+
     game.drawGame();
     
 }
@@ -20,6 +21,10 @@ function draw () {
 function keyPressed() {
     if (keyCode === 32) {
         game.ball.throw();
+    }
+
+    if (keyCode === 13){
+        screen = 1;
     }
 }
 

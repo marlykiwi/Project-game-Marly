@@ -22,7 +22,7 @@ class Ramp {
         // console.log('preload ramp')
         this.image = loadImage('./assets/platform.png');
         this.imageRampDown = loadImage('./assets/vertical platform.png');
-        this.imagePerson = loadImage('./assets/simba lloron.gif');
+        this.imagePerson = loadImage('./assets/simba.png');
         this.imageChain = loadImage('./assets/long chain.png');
     }
 
@@ -30,7 +30,7 @@ class Ramp {
         // console.log('setup ramp')
         this.image = loadImage('./assets/platform.png');
         this.imageRampDown = loadImage('./assets/vertical platform.png');
-        this.imagePerson = loadImage('./assets/simba lloron.gif');
+        this.imagePerson = loadImage('./assets/simba.png');
         this.imageChain = loadImage('./assets/long chain.png');
     }
 
