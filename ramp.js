@@ -1,7 +1,7 @@
 class Ramp {
     constructor() {
         this.x=WIDTH*0.8;
-        this.y=HEIGHT*0.4;
+        this.y=HEIGHT*0.5;
         this.w=160;
         this.wP=0.9*this.w;
         this.hP = (298/334)*this.wP;
@@ -10,32 +10,36 @@ class Ramp {
         this.imageRampDown;
         this.visibility = false;
         this.imagePerson;
-        this.xPerson = this.x+((this.w/2)-167);
-        this.yPerson = this.y- 298;
+        this.xPerson = this.x+(this.w/2 - this.wP/2.5);
+        this.yPerson = this.y-this.hP;
         this.imageChain;
+        this.wChain = 10;
+        this.hChain = (400/10)*this.wChain;
+        this.yChain = this.y-this.hChain;
     }
 
     preloadRamp(){
         // console.log('preload ramp')
         this.image = loadImage('./assets/platform.png');
         this.imageRampDown = loadImage('./assets/vertical platform.png');
-        this.imagePerson = loadImage('./assets/scar.png');
-        // this.imageChain = loadImage('./assets/chain 1.png');
+        this.imagePerson = loadImage('./assets/simba lloron.gif');
+        this.imageChain = loadImage('./assets/long chain.png');
     }
 
     setupRamp(){
         // console.log('setup ramp')
         this.image = loadImage('./assets/platform.png');
         this.imageRampDown = loadImage('./assets/vertical platform.png');
-        this.imagePerson = loadImage('./assets/scar.png');
-        // this.imageChain = loadImage('./assets/chain 1.png');
+        this.imagePerson = loadImage('./assets/simba lloron.gif');
+        this.imageChain = loadImage('./assets/long chain.png');
     }
 
     drawRamp(){
         // console.log('draw ramp')
-        // image(this.imageChain, this.x, 0, 200, this.y;
+        image(this.imageChain, this.x, this.yChain, this.wChain, this.hChain);
         image(this.image, this.x, this.y, this.w, this.h);
-        image(this.imagePerson, this.x+(this.w/2 - this.wP/2), this.y-this.hP, this.wP, this.hP);
+        image(this.imagePerson, this.xPerson, this.yPerson, this.wP, this.hP);
+
     }
 
     

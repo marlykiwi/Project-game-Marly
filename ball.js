@@ -22,7 +22,7 @@ class Ball {
 
     setupBall(){
     this.image= loadImage("./assets/basketball 490.png");
-    frameRate(5);
+    frameRate(10);
     }
 
     throw(){
@@ -30,8 +30,9 @@ class Ball {
         if (this.y === height - this.height) {
             this.velocityY = -18;
             this.velocityX = 0;
-            frameRate(25);
-            
+            frameRate(50);
+            intent +=1;
+                        
         }
     }
 
@@ -50,7 +51,7 @@ class Ball {
         if (this.y >= height-this.height){
             this.y = height - this.height;
             this.velocityY = 0;
-            this.velocityX = 10*(1+0.5*(score));
+            this.velocityX = 10*(1+0.8*(score));
             game.target.visibility = false;
             game.ramp.visibility = false;
         }
