@@ -4,7 +4,7 @@ class Game {
     this.target = new Target();
     this.ball = new Ball();
     this.ramp = new Ramp();
-    this.velocity = 0.7;
+    this.velocity = 0.75;
     this.gravity = -0.4;
     this.backgroundImgs;
         
