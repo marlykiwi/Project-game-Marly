@@ -158,15 +158,20 @@ class Game {
             
         }
         
-        if (screen == 2){
-            clear();
-            image(this.imageCircle, 0,0);
-            textAlign(CENTER);
-            text('GAME OVER', WIDTH/2, HEIGHT/2);
-            text('Press ENTER to try again', WIDTH/2, HEIGHT*0.7);
-
-        }
+        
 
     }
+
+    if (screen == 2){
+        clear();
+        image(this.imageCircle, 0,0);
+        textAlign(CENTER);
+        text('GAME OVER', WIDTH/2, HEIGHT/2);
+        text('Press ENTER to try again', WIDTH/2, HEIGHT*0.7);
+
+    }
+
     }
 }
+
+
